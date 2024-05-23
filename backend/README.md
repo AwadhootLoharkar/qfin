@@ -40,3 +40,5 @@ source .venv/bin/activate
 ```bash
 uv pip install -r requirements.txt
 ```
+
+3. The usage of all scripts is given in the `scripts/usage.ipynb` file.
