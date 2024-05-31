@@ -1,8 +1,8 @@
 import csv
 
-def read_stock_symbols(csv_filename, num_symbols=None):
+def read_stock_symbols(filepath, num_symbols=10):
     stock_symbols = []
-    with open(csv_filename, newline='') as csvfile:
+    with open(filepath, newline='') as csvfile:
         csvreader = csv.reader(csvfile)
         next(csvreader)  # Skip the header row
         for i, row in enumerate(csvreader, start=1):
