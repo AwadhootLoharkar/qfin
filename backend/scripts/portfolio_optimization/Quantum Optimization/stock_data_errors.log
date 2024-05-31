@@ -1,0 +1,30 @@
+ERROR:root:Error processing RELIANCE.NS: Start or end date data not found. '2024-01-01'
+ERROR:root:Error processing TCS.NS: Start or end date data not found. '2024-01-01'
+ERROR:root:Error processing HDB: Start or end date data not found. '2014-01-01'
+ERROR:root:Error processing IBN: Start or end date data not found. '2014-01-01'
+ERROR:root:Error processing INFY: Start or end date data not found. '2014-01-01'
+ERROR:root:Error processing SBIN.NS: Start or end date data not found. '2024-01-01'
+ERROR:root:Error processing LICI.NS: Start or end date data not found. '2014-01-01'
+ERROR:root:Error processing BHARTIARTL.NS: Start or end date data not found. '2024-01-01'
+ERROR:root:Error processing HINDUNILVR.NS: Start or end date data not found. '2024-01-01'
+ERROR:root:Error processing ITC.NS: Start or end date data not found. '2024-01-01'
+ERROR:root:Ticker RELIANCE.NS: Start or end date data not found.
+ERROR:root:Ticker TCS.NS: Start or end date data not found.
+ERROR:root:Ticker HDB: Start or end date data not found.
+ERROR:root:Ticker IBN: Start or end date data not found.
+ERROR:root:Ticker INFY: Start or end date data not found.
+ERROR:root:Ticker SBIN.NS: Start or end date data not found.
+ERROR:root:Ticker LICI.NS: Start or end date data not found.
+ERROR:root:Ticker BHARTIARTL.NS: Start or end date data not found.
+ERROR:root:Ticker HINDUNILVR.NS: Start or end date data not found.
+ERROR:root:Ticker ITC.NS: Start or end date data not found.
+ERROR:root:Ticker RELIANCE.NS: Start or end date data not found.
+ERROR:root:Ticker TCS.NS: Start or end date data not found.
+ERROR:root:Ticker HDB: Start or end date data not found.
+ERROR:root:Ticker IBN: Start or end date data not found.
+ERROR:root:Ticker INFY: Start or end date data not found.
+ERROR:root:Ticker SBIN.NS: Start or end date data not found.
+ERROR:root:Ticker LICI.NS: Start or end date data not found.
+ERROR:root:Ticker BHARTIARTL.NS: Start or end date data not found.
+ERROR:root:Ticker HINDUNILVR.NS: Start or end date data not found.
+ERROR:root:Ticker ITC.NS: Start or end date data not found.
