@@ -75,7 +75,7 @@ def get_yahoo_data(tickers, start_date, end_date):
         print(e)
         raise e
 
-def get_stock_dataframe(tickers, start_date, end_date):
+def get_stocks_dataframe(tickers, start_date, end_date):
     """
     This function fetches detailed stock data for a given list of stock symbols using the `yfinance` library. The data includes the following columns:
         - Date

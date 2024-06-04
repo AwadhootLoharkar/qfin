@@ -1,11 +1,11 @@
 import numpy as np
 
-def run_monte_carlo_simulation(num_ports, stock_symbols, stocks, log_ret):
+def run_monte_carlo_simulation(num_iters, stock_symbols, stocks, log_ret):
     """
     This function runs a Monte Carlo simulation to generate random portfolios.
     
     Args:
-        num_ports (int): Number of portfolios to generate.
+        num_iters (int): Number of iterations for Monte Carlo simulation.
         stock_symbols (list): List of stock symbols.
         stocks (DataFrame): Stock prices.
         log_ret (DataFrame): Logarithmic returns of the stocks.
@@ -17,13 +17,13 @@ def run_monte_carlo_simulation(num_ports, stock_symbols, stocks, log_ret):
         sharpe_arr (ndarray): Portfolio Sharpe ratios.
         cvar_arr (ndarray): Portfolio Conditional Value at Risk (CVaR).
     """
-    all_weights = np.zeros((num_ports, len(stocks.columns)))
-    ret_arr = np.zeros(num_ports)
-    vol_arr = np.zeros(num_ports)
-    sharpe_arr = np.zeros(num_ports)
-    cvar_arr = np.zeros(num_ports)
+    all_weights = np.zeros((num_iters, len(stocks.columns)))
+    ret_arr = np.zeros(num_iters)
+    vol_arr = np.zeros(num_iters)
+    sharpe_arr = np.zeros(num_iters)
+    cvar_arr = np.zeros(num_iters)
     
-    for ind in range(num_ports):
+    for ind in range(num_iters):
         weights = np.random.random(len(stock_symbols))
         weights /= np.sum(weights)
         
