@@ -346,7 +346,7 @@ def MVOScriptRunner(
         'Risk Factor': risk_factor,
         'Confidence Level': confidence_level,
         'Solver': solver,
-        'Optimal Weights': optimal_weights,
+        'Optimal Weights': optimal_weights[0],
         'Optimal Stocks': stock_symbols,
         'Logarithmic Returns': log_ret,
         'Mean Logarithmic Returns': log_return_mean,
