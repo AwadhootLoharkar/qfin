@@ -4,8 +4,7 @@ import sys, os
 # Setting import path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'quantum_optimization'))
 
-from save_result import save_result
-from import_stocks import read_stock_symbols
+from save_result import save_multiple_results
 from script_runner import CVARScriptRunner, MVOScriptRunner
 
 # Settings
@@ -16,10 +15,11 @@ output_csv_file_name = 'results_01.csv'
 
 all_stocks = ['AAPL', 'MSFT', 'GOOG', 'GOOGL', 'AMZN', 'NVDA', 'PEP', 'QCOM', 'NFLX', 'PYPL', 'AMGN']
 
+all_results = []
 
 def run(num_iter=1):
     for i in range(0, num_iter):
-        print("Starting Iteration: ", 1);
+        print("Starting Iteration: ", i+1);
         
         try:
             no_of_stocks = random.randint(4, len(all_stocks)-1)
@@ -41,6 +41,7 @@ def run(num_iter=1):
             confidence_level = 0.95 # Confidence level for the CVaR calculation.
             
             ####################################
+            print('Using numpy minimum eigensolver...')
             solver = 'numpy_minimum_eigensolver'
             
             cvar_numpy_minimum_eigensolver_results = CVARScriptRunner(
@@ -71,6 +72,7 @@ def run(num_iter=1):
             )
             
             ####################################
+            print('Using qaoa...')
             solver = 'qaoa'
             
             cvar_qaoa_results = CVARScriptRunner(
@@ -101,6 +103,7 @@ def run(num_iter=1):
             )
             
             ####################################
+            print('Using sampling vqe...')
             solver = 'sampling_vqe'
             
             cvar_sampling_vqe_results = CVARScriptRunner(
@@ -142,21 +145,21 @@ def run(num_iter=1):
                 'Confidence Level': confidence_level,
                 
                 'Optimal Stocks Selected by Numpy': cvar_numpy_minimum_eigensolver_results['Optimal Stocks'],
-                'Optimal weigths by MVO for Numpy': mvo_numpy_minimum_eigensolver_results['Optimal Weights'],
+                'Optimal weigths by MVO for Numpy': mvo_numpy_minimum_eigensolver_results['Optimal Weights'].tolist(),
                 'Amount to Invest in each Stock by MVO for Numpy': mvo_numpy_minimum_eigensolver_results['Recomended Investment'],
-                'Optimal weigths by CVAR for Numpy': cvar_numpy_minimum_eigensolver_results['Optimal Weights'],
+                'Optimal weigths by CVAR for Numpy': cvar_numpy_minimum_eigensolver_results['Optimal Weights'].tolist(),
                 'Amount to Invest in each Stock by CVAR for Numpy': cvar_numpy_minimum_eigensolver_results['Recomended Investment'],
                 
                 'Optimal Stocks Selected by QAOA': cvar_qaoa_results['Optimal Stocks'],
-                'Optimal weigths by MVO for QAOA': mvo_qaoa_results['Optimal Weights'],
+                'Optimal weigths by MVO for QAOA': mvo_qaoa_results['Optimal Weights'].tolist(),
                 'Amount to Invest in each Stock by MVO for QAOA': mvo_qaoa_results['Recomended Investment'],
-                'Optimal weigths by CVAR for QAOA': cvar_qaoa_results['Optimal Weights'],
+                'Optimal weigths by CVAR for QAOA': cvar_qaoa_results['Optimal Weights'].tolist(),
                 'Amount to Invest in each Stock by CVAR for QAOA': cvar_qaoa_results['Recomended Investment'],
                 
                 'Optimal Stocks Selected by Sampling VQE': cvar_sampling_vqe_results['Optimal Stocks'],
-                'Optimal weigths by MVO for Sampling VQE': mvo_sampling_vqe_results['Optimal Weights'],
+                'Optimal weigths by MVO for Sampling VQE': mvo_sampling_vqe_results['Optimal Weights'].tolist(),
                 'Amount to Invest in each Stock by MVO for Sampling VQE': mvo_sampling_vqe_results['Recomended Investment'],
-                'Optimal weigths by CVAR for Sampling VQE': cvar_sampling_vqe_results['Optimal Weights'],
+                'Optimal weigths by CVAR for Sampling VQE': cvar_sampling_vqe_results['Optimal Weights'].tolist(),
                 'Amount to Invest in each Stock by CVAR for Sampling VQE': cvar_sampling_vqe_results['Recomended Investment'],
             }
             
@@ -165,8 +168,11 @@ def run(num_iter=1):
             print(f"Error encountered in Iteration {i + 1}: {e}")
             continue  # Skip to the next iteration
         
-        save_result(file_name=output_csv_file_name, result=results)
-        print("Ending Iteration: ", 1);
+        all_results.append(results)
+        print("Ending Iteration: ", i+1);
+        
+    print('Saving all results: ', all_results)
+    save_multiple_results(file_name=output_csv_file_name, all_results=all_results)
 
 
-run(30);
+run(2);
