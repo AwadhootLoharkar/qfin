@@ -18,7 +18,7 @@ all_stocks = ['AAPL', 'MSFT', 'GOOG', 'GOOGL', 'AMZN', 'NVDA', 'PEP', 'QCOM', 'N
 all_results = []
 
 def run(num_iter=1):
-    for i in range(0, num_iter):
+    for i in range(num_iter):
         print("Starting Iteration: ", i+1);
         
         try:
