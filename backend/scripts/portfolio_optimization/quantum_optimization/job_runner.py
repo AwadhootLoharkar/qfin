@@ -1,5 +1,4 @@
 import datetime
-from save_result import save_multiple_results
 from script_runner import CVARScriptRunner, MVOScriptRunner
 
 # Settings
@@ -202,56 +201,3 @@ def run_jobs(jobs):
     results = [run_job(job) for job in jobs]
     return results
 
-
-jobs = [
-    {  # series 1
-        "stocks": [
-            "AAPL",
-            "MSFT",
-            "GOOG",
-            "GOOGL",
-            "AMZN",
-            "NVDA",
-            "PEP",
-            "QCOM",
-            "NFLX",
-            "PYPL",
-            "AMGN",
-        ],
-        "start_date": (2018, 1, 13),
-        "end_date": (2024, 1, 1),
-        "portfolio_total_value": 1000000,
-        "budget": 3,
-        "risk_factor": 0.5,
-        "confidence_level": 0.95,
-        "method": "",  # 'cvar' or 'mvo', if not provided, both will be run.
-        "solver": "",  # 'numpy_minimum_eigensolver', 'qaoa', 'sampling_vqe', if not provided, all will be run.
-    },
-    {  # series 2
-        "stocks": [
-            "AAPL",
-            "MSFT",
-            "GOOG",
-            "GOOGL",
-            "AMZN",
-            "NVDA",
-            "PEP",
-            "QCOM",
-            "NFLX",
-            "PYPL",
-            "AMGN",
-        ],
-        "start_date": (2018, 1, 13),
-        "end_date": (2024, 1, 1),
-        "portfolio_total_value": 1000000,
-        "budget": 3,
-        "risk_factor": 0.5,
-        "confidence_level": 0.95,
-        "method": "",  # 'cvar' or 'mvo', if not provided, both will be run.
-        "solver": "",  # 'numpy_minimum_eigensolver', 'qaoa', 'sampling_vqe', if not provided, all will be run.
-    },
-]
-
-results = run_jobs(jobs)
-
-save_multiple_results(file_name="sequential_job_01.csv", all_results=results)
