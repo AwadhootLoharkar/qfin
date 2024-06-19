@@ -2793,7 +2793,7 @@ jobs_14 = [
 
 list_15_1 = ["AMZN", "AXP", "AMGN", "AAPL", "BA", "CAT", "CSCO", "CVX", "GS", "HD"]
 list_15_2 = ["HON", "IBM", "INTC", "JNJ", "KO", "JPM", "MCD", "MMM", "MRK", "MSFT"]
-list_15_3 = ["NKE", "PG", "TRV", "UNH", "CRM", "VZ", "V", "WMT", "DIS", "DOW"]
+list_15_3 = ["NKE", "PG", "TRV", "UNH", "CRM", "VZ", "V", "WMT", "DIS"]
 
 jobs_15 = [
     { # series 1 A
