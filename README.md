@@ -11,13 +11,31 @@ $ git clone https://github.com/devilkiller-ag/qfin.git
 ```
 $ cd qfin
 ```
-3. For backend changes, go to the backend directory
+
+3. To create an evnvirnment, run the following command:
+```bash
+uv venv
+```
+4. To activate the environment, run the following command:
+```bash
+# On macOS and Linux.
+source .venv/bin/activate
+
+# On Windows.
+.venv\Scripts\activate
+```
+5. To install the required packages, run the following command:
+```bash
+uv pip install -r requirements.txt
+```
+
+6. For backend changes, go to the backend directory
 ```
 $ cd backend
 ```
-4. For frontend changes, go to the frontend directory
+7. For frontend changes, go to the pages directory
 ```
-$ cd frontend
+$ cd pages
 ```
 
 The instruction for setting up backend and frontend is given in their respective README.md files.

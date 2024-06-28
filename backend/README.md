@@ -3,6 +3,8 @@
 
 <h3>Backend Setup</h3>
 
+<p><b>NOTE: </b> You don't need to follow these steps and create an enviornment if you have already created enviornment in the root folder.</p>
+
 0. Install `uv`: an extremely fast Python package installer and resolver, written in Rust.
 ```bash
 # On macOS and Linux.
